@@ -352,10 +352,80 @@ main{padding-bottom:120px}
   .tiles{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
   .tile .big{font-size:56px}
 }
+
+/* ---------- Bocados, modo sapo, cierre del día, enfoque, dejar ir ---------- */
+.bsum{display:flex;align-items:center;gap:10px;padding:2px 4px 6px}
+.bsum .prog{flex:1;max-width:160px;height:6px}
+.bsum span{font-size:12.5px;color:var(--muted)}
+.bits{display:flex;flex-direction:column;gap:2px}
+.bits h4{margin:0 0 4px;font:700 12.5px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.bit{display:flex;align-items:center;gap:8px;min-height:44px}
+.bit .chk{width:30px;height:30px}
+.bit .btxt{flex:1;min-width:0;overflow-wrap:anywhere}
+.bit.done .btxt{text-decoration:line-through;color:var(--muted)}
+.bits .add{margin-top:6px}
+.closebar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px}
+.closebar .btn.big,.closebar.fin2 .btn{min-height:56px;padding:0 28px;font-size:17px}
+.closebar.fin2{margin-top:26px}
+.jcard{display:flex;flex-direction:column;gap:12px;padding-block:14px}
+.jcard label,label.habil{display:flex;flex-direction:column;gap:6px;font-size:13.5px;color:var(--muted)}
+label.habil{margin-top:14px}
+textarea.jt{width:100%;resize:none;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--bg);padding:10px 14px;font-size:16px;line-height:1.4;color:var(--ink);font-family:inherit}
+.obst{display:flex;flex-direction:column;gap:8px;margin:12px 0 0}
+.obst label{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--muted)}
+.obst .seg{align-self:flex-start}
+.trow{display:flex;align-items:flex-start;gap:12px;border-bottom:1px solid var(--line);padding-block:4px}
+.trow:last-child{border-bottom:0}
+.trow .tn{flex:0 0 30px;height:30px;margin-top:10px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font:800 15px var(--f-display)}
+.arow2{padding-block:12px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.arow2:last-child{border-bottom:0}
+.arow2.weak{background:linear-gradient(90deg,var(--accent-soft),transparent);margin-inline:-14px;padding-inline:14px}
+.ahead{display:flex;align-items:center;gap:8px}
+.ahead .txt{flex:1;font-weight:600}
+.vname{font:800 17px var(--f-display);padding-block:4px}
+.weakchip{background:var(--sun);color:var(--sun-ink);flex:0 0 auto}
+.score{display:grid;grid-template-columns:repeat(10,1fr);gap:4px}
+.score button{min-height:40px;border:1px solid var(--line);border-radius:12px;background:var(--surface);font:600 14px var(--f-mono);padding:0}
+.score button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.lgk{min-width:0;height:34px;padding:0 12px;font-size:13px}
+.lgk[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.meta .link{margin-left:auto}
+#upd{position:fixed;left:16px;right:16px;top:calc(12px + env(safe-area-inset-top,0px));z-index:95;max-width:520px;margin-inline:auto;min-height:52px;border:0;border-radius:99px;background:var(--sun);color:var(--sun-ink);font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.35);padding:0 20px}
+/* modo sapo */
+.focus{position:fixed;inset:0;z-index:70;background:var(--pond);color:var(--pond-ink);overflow:auto;padding:max(20px,env(safe-area-inset-top,0px)) 20px max(24px,env(safe-area-inset-bottom,0px))}
+.focus .rip{position:absolute;right:-120px;top:-120px;width:340px;height:340px;pointer-events:none}
+.focus .fin{position:relative;max-width:620px;margin-inline:auto}
+.focus .ftop{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.focus .tag{display:inline-flex;align-items:center;gap:8px;background:var(--sun);color:var(--sun-ink);border-radius:99px;padding:5px 14px;font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+.focus .tag b{font:800 16px var(--f-display)}
+.focus .frog{width:84px;height:68px}
+.ftitle{font:800 clamp(28px,7vw,44px)/1.08 var(--f-display);color:var(--pond-ink);margin:14px 0 6px;letter-spacing:-.015em;text-wrap:balance}
+.fg{margin:0 0 14px;color:var(--lime);font-weight:600}
+.fwhy small{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lime);margin-bottom:4px}
+.fwhy p{margin:0 0 14px;color:#DCE5CC;font-size:16.5px}
+.focus .bits h4{color:var(--lime)}
+.focus .bit .btxt{color:var(--pond-ink)}
+.focus .bit.done .btxt{color:#8FB59A}
+.focus .chk{border-color:#8FB59A}
+.focus .done .chk{background:var(--lime);border-color:var(--lime)}
+.focus .done .chk svg{stroke:var(--pond)}
+.focus .ico{color:#B9C8B0}
+.focus .add input[type=text]{background:rgba(255,255,255,.08);border-color:#3C6B4C;color:var(--pond-ink)}
+.focus .add .btn{background:none;border-color:var(--frog);color:var(--pond-ink)}
+.tm{font-size:min(26vw,140px);font-weight:500;color:var(--lime);text-align:center;margin:20px 0 4px;letter-spacing:-.02em;line-height:1}
+.tm.done{color:var(--sun)}
+.fh{text-align:center;color:#DCE5CC;margin:6px 0 18px}
+.facts{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.focus .go{min-height:54px;padding:0 26px;border-radius:99px;border:0;background:var(--lime);color:var(--pond);font-weight:700;font-size:17px;flex:1 1 220px}
+.focus .alt{min-height:54px;padding:0 22px;border-radius:99px;border:2px solid var(--frog);background:none;color:var(--pond-ink);font-weight:600;font-size:16px;flex:1 1 220px}
+.facts.end{flex-direction:column;align-items:center;margin-top:30px;gap:6px}
+.focus .swallow{width:100%;min-height:56px;border-radius:99px;border:0;background:var(--sun);color:var(--sun-ink);font-weight:800;font-size:18px}
+.focus .link{color:#B9C8B0;padding:12px}
 </style>
 
 <div id="app"></div>
 <div id="toast" role="status" hidden></div>
+<button id="upd" hidden>Hay una versión nueva. Tocá para actualizar</button>
 
 <script>
 (function(){
@@ -428,8 +498,27 @@ function seed(){
     ui:{tab:'plan',scope:'day',anchor:iso(t),zoom:'trim'}};
 }
 function load(){
-  try{const r=localStorage.getItem(KEY);if(r){const d=JSON.parse(r);if(d&&d.v===1)return migrate(d)}}catch(e){}
-  return seed();
+  try{const r=localStorage.getItem(KEY);if(r){const d=JSON.parse(r);if(d&&d.v===1)return prep(d)}}catch(e){}
+  return prep(seed());
+}
+/* Quita las tareas repetidas de hoy en adelante que quedaron sueltas cuando un paso dejó de repetirse */
+function cleanup(d){
+  const ti=iso(today()),rep={},gone=[];
+  (d.goals||[]).forEach(g=>g.steps.forEach(s=>{rep[s.id]=s}));
+  d.tasks=(d.tasks||[]).filter(t=>{
+    const s=rep[t.stepId];
+    if(t.rec&&!t.done&&t.key>=ti&&!(s&&s.rep)){if(s&&s.gen)delete s.gen[t.key];return false}
+    return true;
+  });
+  return d;
+}
+function prep(d){
+  migrate(d);cleanup(d);
+  d.areas=d.areas||[];d.areaHist=d.areaHist||[];d.letgo=d.letgo||[];d.journal=d.journal||{};
+  d.tres=d.tres||['','',''];
+  d.vida=d.vida||[{k:'carrera',name:'Carrera y finanzas',score:0,metas:''},{k:'relaciones',name:'Relaciones y familia',score:0,metas:''},{k:'salud',name:'Salud y estado físico',score:0,metas:''}];
+  d.ui=d.ui||{tab:'plan'};
+  return d;
 }
 /* el Plan es solo diario: las tareas de semana, mes o año pasan a hoy (o a su día, si ya estaban hechas) */
 function migrate(d){
@@ -464,7 +553,7 @@ function heroHtml(list){
     return '<section class="hero" aria-label="El sapo de hoy">'+RIPPLES+'<div class="top"><span class="tag"><b>A-'+idx+'</b>El sapo de hoy</span>'+frog('#7CC24E','frog')+'</div>'+
       '<h3>'+esc(open.text)+'</h3>'+
       '<div class="why"><small>Si no lo hago</small>'+(open.why?'<p>'+esc(open.why)+'</p>':'')+'<input type="text" data-f="why" data-id="'+open.id+'" value="'+esc(open.why||'')+'" placeholder="'+(open.why?'Cambiar la consecuencia':'Escribí qué pasa si no lo hacés')+'" aria-label="Qué pasa si no la hago" autocomplete="off"'+(open.why?' style="margin-top:8px"':'')+'></div>'+
-      '<div class="acts"><button class="go" data-act="tog" data-id="'+open.id+'">Ya me lo tragué</button></div></section>';
+      '<div class="acts"><button class="go" data-act="tog" data-id="'+open.id+'">Ya me lo tragué</button><button class="alt" data-act="focus" data-id="'+open.id+'">Modo sapo</button></div></section>';
   }
   if(list.some(t=>t.pri==='A'))
     return '<section class="hero won" aria-label="Sapo tragado">'+RIPPLES+'<div class="top"><span class="tag"><b>✓</b>Sapo tragado</span>'+frog('#B7E04A','frog',1)+'</div><h3>Lo más difícil ya pasó.</h3><div class="why"><p>Terminaste todas tus tareas A. El resto del día es una delicia.</p></div></section>';
@@ -503,9 +592,10 @@ function taskRow(t,badge){
   let h='<li class="task'+(t.done?' done':'')+'"><button class="chk" data-act="tog" data-id="'+t.id+'" aria-label="Marcar como hecha">'+CHECK+'</button>'+
    '<button class="pri p'+(t.pri||'0')+'" data-act="pri" data-id="'+t.id+'" aria-label="Prioridad" title="'+(t.pri?t.pri+': '+PRINAME[t.pri]:'Elegir prioridad')+'">'+(badge||'·')+'</button>'+
    '<div class="tbody"><textarea class="txt auto" rows="1" data-f="task" data-id="'+t.id+'" aria-label="Tarea">'+esc(t.text)+'</textarea>'+
-   (g?'<div class="meta"><span class="chip">'+(t.rec?'↻ ':'')+(g.main?'★ ':'')+esc(g.title)+'</span></div>':'')+'</div>'+
+   (g?'<div class="meta"><span class="chip">'+(t.rec?'↻ ':'')+(g.main?'★ ':'')+esc(g.title)+'</span></div>':'')+
+   (t.bits&&t.bits.length?'<div class="bsum"><div class="prog" aria-hidden="true"><i style="width:'+Math.round(t.bits.filter(x=>x.done).length/t.bits.length*100)+'%"></i></div><span class="mono">'+t.bits.filter(x=>x.done).length+' de '+t.bits.length+' bocados</span></div>':'')+'</div>'+
    '<button class="ico" data-act="detail" data-id="'+t.id+'" aria-expanded="'+open+'" aria-label="Más opciones">'+(open?'▴':'⋯')+'</button></li>';
-  if(open)h+='<li class="detail"><div class="dacts"><button class="btn sm" data-act="up" data-id="'+t.id+'">▲ Subir</button><button class="btn sm" data-act="dn" data-id="'+t.id+'">▼ Bajar</button></div>'+
+  if(open)h+='<li class="detail"><div class="dacts"><button class="btn sm" data-act="focus" data-id="'+t.id+'">Modo sapo</button><button class="btn sm" data-act="up" data-id="'+t.id+'">▲ Subir</button><button class="btn sm" data-act="dn" data-id="'+t.id+'">▼ Bajar</button></div>'+bitsHtml(t)+
     '<label>¿Qué pasa si no la hago?<input type="text" data-f="why" data-id="'+t.id+'" value="'+esc(t.why||'')+'" placeholder="Consecuencia de no hacerla" autocomplete="off"></label>'+
     (t.done?'<div class="imp"><span>¿Cuánto aportó?</span><div class="seg">'+[1,2,3].map(n=>'<button data-act="imp" data-id="'+t.id+'" data-v="'+n+'" aria-pressed="'+(t.impact===n)+'">'+IMPNAME[n]+'</button>').join('')+'</div></div>':'<p class="dh">Cuando la termines, vas a poder calificar cuánto aportó.</p>')+'</li>';
   return h;
@@ -523,6 +613,7 @@ function viewPlan(){
   h+='<h3 class="eyebrow" style="margin-top:6px">Tu lista de hoy</h3>';
   if(list.length)h+='<div class="prog" aria-hidden="true"><i style="width:'+Math.round(done/list.length*100)+'%"></i></div><p class="mono" style="margin:6px 0 12px;color:var(--muted);font-size:13px">'+done+' de '+list.length+' hechas</p>';
   h+='<div class="card">'+(list.length?'<ul class="list">'+list.map(t=>taskRow(t,badge(t))).join('')+'</ul>':'<div class="empty">No hay tareas para hoy. Agregá la primera abajo.</div>')+'</div>';
+  h+=closeBtn();
   h+='<p class="legend"><b>Tocá la letra para clasificar:</b> A muy importante, con consecuencias graves · B debería hacerla · C agradable, sin consecuencias · D delegar · E eliminar. Nunca hagas una B si queda una A pendiente.</p>';
   h+='<form class="add" data-add="plan"><input type="text" id="addInput" placeholder="Nueva tarea" aria-label="Nueva tarea" autocomplete="off"><label class="dsel">Para el<input type="date" id="addDate" value="'+ti+'" min="'+ti+'"></label><select id="addGoal" aria-label="Objetivo"><option value="">Sin objetivo</option>'+S.goals.map(g=>'<option value="'+g.id+'">'+esc(g.title)+'</option>').join('')+'</select><button class="btn pri-b" type="submit">Agregar</button></form>';
   const fut=S.tasks.filter(t=>t.scope==='day'&&t.key>ti&&!t.done).sort((a,b)=>a.key<b.key?-1:a.key>b.key?1:0);
@@ -550,7 +641,8 @@ function viewArchive(){
   const by={};done.forEach(t=>{(by[t.key]=by[t.key]||[]).push(t)});
   const keys=Object.keys(by).sort().reverse(),n=S.ui.arch||14;
   keys.slice(0,n).forEach(k=>{
-    h+='<div class="block"><h3>'+esc(label('day',k))+' · '+by[k].length+'</h3><div class="card"><ul class="list">'+sorted(by[k]).map(t=>{
+    const jr=(S.journal||{})[k]||{};
+    h+='<div class="block"><h3>'+esc(label('day',k))+' · '+by[k].length+'</h3>'+((jr.good||jr.lesson)?'<p class="psub" style="margin:0 0 8px">'+(jr.good?'<b>Lo bueno:</b> '+esc(jr.good)+' ':'')+(jr.lesson?'<b>Aprendí:</b> '+esc(jr.lesson):'')+'</p>':'')+'<div class="card"><ul class="list">'+sorted(by[k]).map(t=>{
       const g=t.goalId&&goalOf(t.goalId);
       return '<li class="arow"><span class="ok" aria-hidden="true">✓</span><div class="fx"><span class="ltxt">'+esc(t.text)+'</span>'+((t.pri||g||t.impact)?'<span class="lm">'+[t.pri?t.pri+' · '+PRINAME[t.pri]:'',g?(t.rec?'↻ ':'')+esc(g.title):'',t.impact?'aportó: '+IMPNAME[t.impact].toLowerCase():''].filter(Boolean).join(' · ')+'</span>':'')+'</div></li>';
     }).join('')+'</ul></div></div>';
@@ -612,6 +704,7 @@ function viewGoals(){
     '<div class="gmeta"><button class="btn sm" data-act="gcol" data-id="'+g.id+'" aria-expanded="'+!col+'">'+(col?'▸':'▾')+' '+g.steps.length+(g.steps.length===1?' paso':' pasos')+'</button><button class="btn sm'+(g.main?' on':'')+'" data-act="gmain" data-id="'+g.id+'" aria-pressed="'+!!g.main+'" title="El objetivo que más impacto tendría en tu vida">'+(g.main?'★ Principal':'☆ Principal')+'</button><span class="mono" style="color:var(--accent);font-weight:500;margin-left:auto">'+p+'%</span></div>'+
     '<div class="prog" style="margin-top:8px"><i style="width:'+p+'%"></i></div>';
     if(col){h+='</section>';return}
+    h+='<div class="obst"><label>¿Qué me está frenando para lograr esto?<textarea class="auto jt" rows="1" data-f="gobst" data-id="'+g.id+'" placeholder="El obstáculo principal">'+esc(g.obst||'')+'</textarea></label><div class="seg" role="group" aria-label="Tipo de obstáculo"><button data-act="gokind" data-id="'+g.id+'" data-v="int" aria-pressed="'+(g.obstKind==='int')+'">Interno</button><button data-act="gokind" data-id="'+g.id+'" data-v="ext" aria-pressed="'+(g.obstKind==='ext')+'">Externo</button></div></div>';
     h+='<div class="dates"><label>Empieza<input type="date" data-f="gstart" data-id="'+g.id+'" value="'+esc(g.start||'')+'"></label><label>Meta<input type="date" data-f="gdue" data-id="'+g.id+'" value="'+esc(g.due||'')+'"></label></div>';
     g.steps.forEach(s=>{
       const rep=!!s.rep,ids='data-id="'+g.id+'" data-s="'+s.id+'"';
@@ -767,6 +860,7 @@ let toastT;
 function cheer(){
   const m=activity(),n=m[iso(today())]||0,st=streakOf(m);
   const el=document.getElementById('toast');if(!el)return;
+  beep('ok');
   el.textContent='Hecho. Hoy completaste '+n+(n===1?' tarea':' tareas')+(st>1?' · racha de '+st+' días':'');
   el.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>{el.hidden=true},2800);
 }
@@ -864,7 +958,7 @@ function viewDash(){
     S.goals.forEach(g=>{
       const s=goalState(g);
       const dn=g.steps.filter(x=>x.done&&x.doneAt),ont=dn.filter(x=>!x.due||x.doneAt<=x.due).length;
-      h+='<div class="grow2"><div class="gt"><b>'+(g.main?'★ ':'')+esc(g.title)+'</b><span class="pill '+s.cls+'">'+s.txt+'</span></div>'+
+      h+='<div class="grow2"><div class="gt"><b>'+(g.main?'★ ':'')+esc(g.title)+'</b><span class="pill '+s.cls+'">'+s.txt+'</span></div>'+(g.obst?'<p class="gs" style="margin:0 0 8px">Obstáculo'+(g.obstKind==='int'?' (interno)':g.obstKind==='ext'?' (externo)':'')+': '+esc(g.obst)+'</p>':'')+
       '<div class="prog"><i style="width:'+s.p+'%"></i></div>'+
       (g.steps.length?'<div class="path">'+(()=>{let cur=false;return g.steps.map(x=>{const dn=stepFrac(g,x)>=1;let c='',f='';if(dn)c='d';else if(!cur){cur=true;c='c';f=frog('#B7E04A','pf')}return '<div class="stp '+c+'">'+f+'<i>'+(dn?'✓':'')+'</i><span>'+esc(x.text)+'</span></div>'}).join('')})()+'</div>':'')+
       '<div class="gs mono">'+s.p+'% · '+g.steps.filter(x=>stepFrac(g,x)>=1).length+' de '+g.steps.length+' pasos'+(s.left!=null?' · faltan '+s.left+' días':'')+(dn.length?' · '+ont+' de '+dn.length+' pasos en fecha':'')+'</div></div>';
@@ -875,28 +969,183 @@ function viewDash(){
   return h;
 }
 
-const TABS=[['plan','Plan'],['late','Postergadas'],['goals','Objetivos'],['gantt','Cronograma'],['dash','Panel'],['master','Lista maestra'],['arch','Archivo']];
+const TABS=[['plan','Plan'],['late','Postergadas'],['goals','Objetivos'],['gantt','Cronograma'],['dash','Panel'],['areas','Enfoque'],['letgo','Dejar ir'],['master','Lista maestra'],['arch','Archivo']];
 let dismissed=false;
 function autosize(el){el.style.height='auto';el.style.height=el.scrollHeight+'px'}
 function sizeAll(){if(document.querySelectorAll)document.querySelectorAll('textarea.auto').forEach(autosize)}
 function render(){
   const c1=syncSteps(),c2=ensureRec(today(),today());if(c1||c2)save();
   const tab=S.ui.tab;
-  let body=({plan:viewPlan,late:viewLate,dash:viewDash,master:viewMaster,arch:viewArchive,goals:viewGoals,gantt:viewGantt}[tab]||viewPlan)();
+  const navTab=tab==='close'?'plan':tab;
+  let body=({plan:viewPlan,close:viewClose,late:viewLate,dash:viewDash,master:viewMaster,arch:viewArchive,goals:viewGoals,gantt:viewGantt,areas:viewAreas,letgo:viewLetgo}[tab]||viewPlan)();
   const nl=late().length;
   const banner=hasEx()?'<div class="banner"><span>Estos son datos de ejemplo para que veas cómo funciona.</span><button class="btn sm" data-act="clearex">Empezar de cero</button></div>':'';
   const bdg=t=>t[0]==='late'&&nl?'<span class="bdg">'+nl+'</span>':'';
   const MAIN=['plan','late','goals'],extra=TABS.filter(t=>!MAIN.includes(t[0]));
-  const side='<aside class="side"><div class="sbrand">'+frog('#7CC24E','')+'<div>Planificador<br>del Sapo</div></div><nav role="tablist" aria-label="Secciones">'+TABS.map(t=>'<button class="n" role="tab" data-act="tab" data-v="'+t[0]+'" aria-selected="'+(t[0]===tab)+'"><i></i>'+t[1]+bdg(t)+'</button>').join('')+'</nav><div class="sfoot"><div class="sq">«Si lo primero que haces cada mañana es tragarte un sapo, el resto del día será una delicia.»</div><span>Brian Tracy, tras Mark Twain</span><button class="link" data-act="backup">Respaldo</button></div></aside>';
-  const bottom='<nav class="bottom" aria-label="Secciones">'+TABS.filter(t=>MAIN.includes(t[0])).map(t=>'<button data-act="tab" data-v="'+t[0]+'" aria-current="'+(t[0]===tab)+'">'+(t[0]==='plan'?'Hoy':t[1])+bdg(t)+'</button>').join('')+'<button data-act="more" aria-expanded="'+!!S.ui.more+'" aria-current="'+(!MAIN.includes(tab))+'">Más</button></nav>'+
-    (S.ui.more?'<div class="more">'+extra.map(t=>'<button data-act="tab" data-v="'+t[0]+'" aria-current="'+(t[0]===tab)+'">'+t[1]+'</button>').join('')+'<button data-act="backup">Respaldo</button></div>':'');
+  const side='<aside class="side"><div class="sbrand">'+frog('#7CC24E','')+'<div>Planificador<br>del Sapo</div></div><nav role="tablist" aria-label="Secciones">'+TABS.map(t=>'<button class="n" role="tab" data-act="tab" data-v="'+t[0]+'" aria-selected="'+(t[0]===navTab)+'"><i></i>'+t[1]+bdg(t)+'</button>').join('')+'</nav><div class="sfoot"><div class="sq">«Si lo primero que haces cada mañana es tragarte un sapo, el resto del día será una delicia.»</div><span>Brian Tracy, tras Mark Twain</span><button class="link" data-act="sound">Sonido: '+(S.ui.mute?'no':'sí')+'</button><button class="link" data-act="backup">Respaldo</button></div></aside>';
+  const bottom='<nav class="bottom" aria-label="Secciones">'+TABS.filter(t=>MAIN.includes(t[0])).map(t=>'<button data-act="tab" data-v="'+t[0]+'" aria-current="'+(t[0]===navTab)+'">'+(t[0]==='plan'?'Hoy':t[1])+bdg(t)+'</button>').join('')+'<button data-act="more" aria-expanded="'+!!S.ui.more+'" aria-current="'+(!MAIN.includes(navTab))+'">Más</button></nav>'+
+    (S.ui.more?'<div class="more">'+extra.map(t=>'<button data-act="tab" data-v="'+t[0]+'" aria-current="'+(t[0]===navTab)+'">'+t[1]+'</button>').join('')+'<button data-act="sound">Sonido: '+(S.ui.mute?'no':'sí')+'</button><button data-act="backup">Respaldo</button></div>':'');
   $('#app').innerHTML='<div class="shell">'+side+'<div class="content"><header class="top"><div class="brand">'+frog('#7CC24E','')+'<h1>Planificador del Sapo</h1></div></header>'+
-   '<main><div class="wrap'+(tab==='gantt'?' wide':'')+'">'+banner+body+'</div></main></div></div>'+bottom+(nl&&tab!=='late'&&!dismissed?'<div class="lates" role="alert"><button class="go" data-act="tab" data-v="late">'+nl+(nl===1?' tarea sin completar':' tareas sin completar')+'<small>Tocá para elegir una nueva fecha</small></button><button class="x" data-act="dismiss" aria-label="Cerrar aviso">✕</button></div>':'')+(panel?viewPanel():'');
+   '<main><div class="wrap'+(tab==='gantt'?' wide':'')+'">'+banner+body+'</div></main></div></div>'+bottom+(nl&&tab!=='late'&&!dismissed?'<div class="lates" role="alert"><button class="go" data-act="tab" data-v="late">'+nl+(nl===1?' tarea sin completar':' tareas sin completar')+'<small>Tocá para elegir una nueva fecha</small></button><button class="x" data-act="dismiss" aria-label="Cerrar aviso">✕</button></div>':'')+(panel?viewPanel():'')+(S.ui.focus?viewFocus():'');
   sizeAll();
   if(focusId){const el=document.getElementById(focusId);if(el)el.focus();focusId=null}
 }
 function viewPanel(){
   return '<div class="panel" data-act="closepanel"><div><h2 style="font-size:22px">Respaldo</h2><p class="hint">Los datos se guardan solo en este navegador. Copiá este texto y guardalo en una nota para tener una copia. Para restaurar, pegalo acá y tocá Cargar.</p><textarea id="bk" aria-label="Datos">'+esc(JSON.stringify(S))+'</textarea><div class="bar" style="margin:12px 0 0"><button class="btn" data-act="copy">Copiar</button><button class="btn pri-b" data-act="restore">Cargar</button><button class="btn" data-act="closepanel">Cerrar</button></div><p id="bkmsg" class="hint" style="margin:10px 0 0"></p></div></div>';
+}
+
+/* ---------- bocados, modo sapo, cierre del día, enfoque y dejar ir ---------- */
+const tmKey=()=>iso(addDays(today(),1));
+function say(msg){const el=document.getElementById('toast');if(!el)return;el.textContent=msg;el.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>{el.hidden=true},2800)}
+
+/* Bocados: una tarea grande dividida en pedacitos que se pueden tildar */
+function bitsHtml(t){
+  const b=t.bits||[];
+  let h='<div class="bits"><h4>Bocados'+(b.length?' · '+b.filter(x=>x.done).length+' de '+b.length:'')+'</h4>';
+  b.forEach(x=>{h+='<div class="bit'+(x.done?' done':'')+'"><button class="chk" data-act="bittog" data-id="'+t.id+'" data-s="'+x.id+'" aria-label="Marcar bocado">'+CHECK+'</button><span class="btxt">'+esc(x.text)+'</span><button class="ico" data-act="bitdel" data-id="'+t.id+'" data-s="'+x.id+'" aria-label="Quitar bocado">✕</button></div>'});
+  h+='<form class="add" data-add="bit" data-id="'+t.id+'"><input type="text" placeholder="Un bocado: el primer pedacito" aria-label="Nuevo bocado" autocomplete="off"><button class="btn sm" type="submit">Agregar</button></form></div>';
+  return h;
+}
+
+/* Sonido y temporizador */
+const MODES={work:{min:90,label:'Bloque de trabajo'},start:{min:5,label:'5 minutos para arrancar'},rest:{min:15,label:'Descanso'}};
+let actx=null,wake=null;
+function beep(kind){
+  if(S.ui.mute)return;
+  try{
+    actx=actx||new (window.AudioContext||window.webkitAudioContext)();
+    if(actx.state==='suspended')actx.resume();
+    const seq=kind==='ok'?[[660,0,.12],[880,.12,.2]]:kind==='end'?[[660,0,.2],[660,.3,.2],[880,.6,.4],[660,1.3,.2],[660,1.6,.2],[880,1.9,.5]]:[[523,0,.15],[659,.15,.15],[784,.3,.35]];
+    seq.forEach(x=>{
+      const o=actx.createOscillator(),g=actx.createGain(),t0=actx.currentTime+x[1];
+      o.type='sine';o.frequency.value=x[0];o.connect(g);g.connect(actx.destination);
+      g.gain.setValueAtTime(.0001,t0);g.gain.exponentialRampToValueAtTime(.25,t0+.02);g.gain.exponentialRampToValueAtTime(.0001,t0+x[2]);
+      o.start(t0);o.stop(t0+x[2]+.05);
+    });
+  }catch(e){}
+}
+async function keepAwake(on){
+  try{
+    if(on){if(navigator.wakeLock&&!wake){wake=await navigator.wakeLock.request('screen');wake.addEventListener('release',()=>{wake=null})}}
+    else if(wake){await wake.release();wake=null}
+  }catch(e){}
+}
+const leftMs=()=>S.ui.timer?S.ui.timer.endAt-Date.now():0;
+const fmtMs=ms=>{const s=Math.max(0,Math.ceil(ms/1000));return pad(Math.floor(s/60))+':'+pad(s%60)};
+function startTimer(mode){
+  S.ui.timer={mode:mode,endAt:Date.now()+MODES[mode].min*60000,fired:false};
+  try{if('Notification' in window&&Notification.permission==='default')Notification.requestPermission()}catch(e){}
+  keepAwake(true);
+}
+function fireTimer(){
+  const t=S.ui.timer;if(!t||t.fired)return;
+  t.fired=true;save();
+  beep('end');
+  try{if(navigator.vibrate)navigator.vibrate([300,150,300,150,600])}catch(e){}
+  keepAwake(false);
+  const txt=t.mode==='work'?'Terminó tu bloque de 90 minutos.':t.mode==='start'?'Pasaron los 5 minutos. ¿Seguís?':'Terminó el descanso.';
+  try{
+    if('Notification' in window&&Notification.permission==='granted'&&navigator.serviceWorker)
+      navigator.serviceWorker.ready.then(r=>r.showNotification('Planificador del Sapo',{body:txt,icon:'icons/icon-192.png',badge:'icons/icon-192.png',tag:'sapo-timer',vibrate:[200,100,200]})).catch(()=>{});
+  }catch(e){}
+  render();
+}
+function tick(){
+  const t=S.ui.timer;if(!S.ui.focus||!t||t.fired)return;
+  const l=leftMs(),el=document.getElementById('tm');
+  if(el)el.textContent=fmtMs(l);
+  if(l<=0)fireTimer();
+}
+setInterval(tick,1000);
+
+function viewFocus(){
+  const t=T(S.ui.focus);
+  if(!t){S.ui.focus=null;S.ui.timer=null;return ''}
+  const tm=S.ui.timer,left=tm?leftMs():0,fired=!!tm&&(tm.fired||left<=0);
+  const g=t.goalId&&goalOf(t.goalId);
+  let h='<div class="focus" role="dialog" aria-label="Modo sapo">'+RIPPLES+'<div class="fin"><div class="ftop"><span class="tag"><b>'+(t.pri||'·')+'</b>Modo sapo</span>'+frog('#7CC24E','frog')+'</div>'+
+    '<h2 class="ftitle">'+esc(t.text)+'</h2>'+(g?'<p class="fg">'+esc(g.title)+'</p>':'')+
+    (t.why?'<div class="fwhy"><small>Si no lo hago</small><p>'+esc(t.why)+'</p></div>':'')+bitsHtml(t);
+  if(!tm)h+='<p class="fh">Un solo trabajo, sin mensajes ni redes. Elegí cómo arrancar.</p><div class="facts"><button class="go" data-act="fstart" data-v="work">Empezar 90 minutos</button><button class="alt" data-act="fstart" data-v="start">5 minutos para arrancar</button></div>';
+  else if(!fired)h+='<div class="tm mono" id="tm">'+fmtMs(left)+'</div><p class="fh">'+MODES[tm.mode].label+'. Dejá el teléfono boca abajo y seguí.</p><div class="facts"><button class="alt" data-act="fstop">Cancelar temporizador</button></div>';
+  else if(tm.mode==='work')h+='<div class="tm mono done">00:00</div><p class="fh">Terminó tu bloque. Si seguís, tomate primero 15 minutos.</p><div class="facts"><button class="go" data-act="fstart" data-v="rest">Descanso de 15 minutos</button><button class="alt" data-act="fstart" data-v="work">Otros 90 minutos</button></div>';
+  else if(tm.mode==='start')h+='<div class="tm mono done">00:00</div><p class="fh">Ya arrancaste, que es lo más difícil. ¿Seguís?</p><div class="facts"><button class="go" data-act="fstart" data-v="work">Seguir 90 minutos</button><button class="alt" data-act="fstop">Listo por ahora</button></div>';
+  else h+='<div class="tm mono done">00:00</div><p class="fh">Descanso terminado.</p><div class="facts"><button class="go" data-act="fstart" data-v="work">Volver a 90 minutos</button><button class="alt" data-act="fstop">Listo por ahora</button></div>';
+  h+='<div class="facts end"><button class="swallow" data-act="fdone">Ya me lo tragué</button><button class="link" data-act="fexit">Salir del modo sapo</button></div></div></div>';
+  return h;
+}
+
+/* Cierre del día */
+function closeBtn(){
+  const j=(S.journal||{})[iso(today())];
+  return '<div class="closebar"><button class="btn pri-b" data-act="goclose">'+(j&&j.closed?'Ver cierre del día':'Terminé por hoy')+'</button>'+(j&&j.closed?'<span class="chip">Día cerrado ✓</span>':'')+'</div>';
+}
+function viewClose(){
+  const t0=today(),ti=iso(t0),tm=tmKey();
+  if(ensureRec(addDays(t0,1),addDays(t0,1)))save();
+  const day=sorted(S.tasks.filter(t=>t.scope==='day'&&t.key===ti));
+  const done=day.filter(t=>t.done),pend=day.filter(t=>!t.done&&!t.rec),recMiss=day.filter(t=>!t.done&&t.rec).length;
+  const aL=day.filter(t=>t.pri==='A'),aDone=aL.filter(t=>t.done).length;
+  const st=streakOf(activity()),j=(S.journal||{})[ti]||{};
+  let msg;
+  if(!day.length)msg='Hoy no armaste lista. Antes de dormir, dejá escrito el sapo de mañana.';
+  else if(aL.length&&aDone===aL.length)msg='Te tragaste el sapo. Lo más difícil del día ya pasó.';
+  else if(aL.length)msg='El sapo de hoy quedó pendiente. Mañana va primero, antes que cualquier otra cosa.';
+  else if(done.length===day.length)msg='Completaste todo lo que te propusiste.';
+  else msg='Hiciste '+done.length+' de '+day.length+'. Cerrá el día y dejá mañana preparado.';
+  let h='<p class="eyebrow">Cierre del día · '+esc(label('day',ti))+'</p><h2>Terminé por hoy</h2><p class="hint">'+msg+'</p>';
+  h+='<div class="tiles"><div class="tile frog"><div class="k">Hechas</div><div class="big mono">'+done.length+'<small>/'+day.length+'</small></div><div class="s">tareas de hoy</div></div>'+
+     '<div class="tile"><div class="k">Sapos (A)</div><div class="big mono">'+aDone+'<small>/'+aL.length+'</small></div><div class="s">tareas importantes hechas</div></div>'+
+     '<div class="tile"><div class="k">Racha</div><div class="big mono">'+st+'</div><div class="s">'+(st===1?'día seguido':'días seguidos')+'</div></div></div>';
+  if(pend.length){
+    h+='<div class="block"><h3>Lo que quedó sin hacer</h3><div class="card">'+pend.map(t=>'<div class="sug"><b>'+(t.pri?'<span class="pri p'+t.pri+'" style="margin-right:8px">'+t.pri+'</span>':'')+esc(t.text)+'</b><button class="btn sm" data-act="carry" data-id="'+t.id+'">Pasar a mañana</button></div>').join('')+'</div>'+
+      '<div class="add"><button class="btn" data-act="carryall">Pasar todo a mañana</button></div><p class="psub">Si no las pasás, quedan en Postergadas para que elijas otra fecha.</p></div>';
+  }
+  if(recMiss)h+='<p class="psub">'+recMiss+(recMiss===1?' rutina sin hacer: no vuelve':' rutinas sin hacer: no vuelven')+', pero cuentan en el Panel.</p>';
+  h+='<div class="block"><h3>Cómo fue tu día</h3><div class="card jcard"><label>Lo bueno de hoy<textarea class="auto jt" rows="2" data-f="jgood" placeholder="Algo que salió bien">'+esc(j.good||'')+'</textarea></label><label>Lo que aprendí<textarea class="auto jt" rows="2" data-f="jlesson" placeholder="Una lección, aunque sea chica">'+esc(j.lesson||'')+'</textarea></label></div></div>';
+  const mt=sorted(S.tasks.filter(t=>t.scope==='day'&&t.key===tm));
+  const mA=mt.filter(t=>t.pri==='A').length;
+  h+='<div class="block"><h3>Mañana · '+esc(label('day',tm))+'</h3>';
+  h+=mt.length?'<div class="card"><ul class="list">'+mt.map(t=>{const g=t.goalId&&goalOf(t.goalId);return '<li class="task"><button class="pri p'+(t.pri||'0')+'" data-act="pri" data-id="'+t.id+'" aria-label="Prioridad">'+(t.pri||'·')+'</button><div class="tbody"><textarea class="txt auto" rows="1" data-f="task" data-id="'+t.id+'" aria-label="Tarea">'+esc(t.text)+'</textarea>'+(g?'<div class="meta"><span class="chip">'+(t.rec?'↻ ':'')+esc(g.title)+'</span></div>':'')+'</div></li>'}).join('')+'</ul></div>':'<div class="card empty">Todavía no hay tareas para mañana.</div>';
+  h+='<p class="psub" style="margin-top:8px">'+(mA?'Tu sapo de mañana ya está elegido.':'Tocá la letra de una tarea hasta que diga A: ese va a ser tu sapo de mañana.')+'</p>';
+  h+='<form class="add" data-add="tomorrow"><input type="text" id="addInput" placeholder="Agregar algo para mañana" aria-label="Agregar para mañana" autocomplete="off"><button class="btn" type="submit">Agregar</button></form></div>';
+  h+='<div class="closebar fin2"><button class="btn pri-b big" data-act="closeday">Cerrar el día</button><button class="link" data-act="tab" data-v="plan">Volver al plan</button></div>';
+  return h;
+}
+
+/* Enfoque: mis tres, áreas clave de resultados y rueda de vida */
+function scoreRow(act,id,cur){
+  return '<div class="score" role="group">'+[1,2,3,4,5,6,7,8,9,10].map(n=>'<button data-act="'+act+'" data-id="'+id+'" data-v="'+n+'" aria-pressed="'+(cur===n)+'">'+n+'</button>').join('')+'</div>';
+}
+function viewAreas(){
+  let h='<h2>Enfoque</h2><p class="hint">Antes de elegir tu sapo, conviene saber dónde aportás más valor y dónde estás más flojo.</p>';
+  h+='<div class="block"><h3>Mis tres tareas clave</h3><p class="psub">Si solo pudieras hacer una cosa de tu trabajo, ¿cuál sería? Después la segunda y la tercera. Según el libro, esas tres aportan cerca del 90% de tu valor.</p><div class="card">'+
+    [0,1,2].map(i=>'<div class="trow"><span class="tn">'+(i+1)+'</span><textarea class="txt auto" rows="1" data-f="tres" data-id="'+i+'" placeholder="'+['La más valiosa','La segunda','La tercera'][i]+'" aria-label="Tarea clave '+(i+1)+'">'+esc(S.tres[i]||'')+'</textarea></div>').join('')+'</div></div>';
+  const sc=S.areas.filter(a=>a.score>0),min=sc.length?Math.min.apply(null,sc.map(a=>a.score)):0;
+  h+='<div class="block"><h3>Áreas clave de resultados</h3><p class="psub">Son las 5 a 7 cosas que tenés que lograr para hacer bien tu trabajo. Ponete de 1 a 10 en cada una. La más débil limita todo lo demás.</p>';
+  if(S.areas.length){
+    h+='<div class="card">'+S.areas.map(a=>'<div class="arow2'+(a.score>0&&a.score===min&&sc.length>1?' weak':'')+'"><div class="ahead"><textarea class="txt auto" rows="1" data-f="aname" data-id="'+a.id+'" aria-label="Nombre del área">'+esc(a.name)+'</textarea>'+(a.score>0&&a.score===min&&sc.length>1?'<span class="chip weakchip">El más débil</span>':'')+'<button class="ico" data-act="adel" data-id="'+a.id+'" aria-label="Quitar área">✕</button></div>'+scoreRow('ascore',a.id,a.score)+'</div>').join('')+'</div>';
+  }else h+='<div class="card empty">Todavía no cargaste áreas. Ejemplos: conseguir clientes, entregar informes, cobrar, armar equipo.</div>';
+  h+='<form class="add" data-add="area"><input type="text" placeholder="Nueva área clave" aria-label="Nueva área clave" autocomplete="off"><button class="btn" type="submit">Agregar área</button></form>';
+  h+='<label class="habil">¿Qué habilidad, si la desarrollo de manera excelente, tendría el mayor impacto en mi carrera?<textarea class="auto jt" rows="2" data-f="habil" placeholder="Mi habilidad clave">'+esc(S.habil||'')+'</textarea></label>'+
+    '<div class="bar" style="margin-top:8px"><button class="btn sm" data-act="habgoal">Convertir en objetivo</button><button class="btn sm" data-act="asave">Guardar evaluación de hoy</button></div>';
+  const hist=S.areaHist.slice(-3).reverse();
+  if(hist.length)h+='<p class="psub">'+hist.map(x=>{const v=Object.keys(x.s).map(k=>x.s[k]).filter(n=>n>0);return esc(fmt(parse(x.d),{day:'numeric',month:'short'}))+': promedio '+(v.length?(v.reduce((a,b)=>a+b,0)/v.length).toFixed(1):'–')}).join(' · ')+'</p>';
+  h+='</div>';
+  h+='<div class="block"><h3>Mi vida en tres áreas</h3><p class="psub">Anotá sin pensar mucho tus tres metas más importantes en cada área y ponete de 1 a 10. Muestra dónde estás bien y dónde conviene mejorar.</p><div class="card">'+
+    S.vida.map(v=>'<div class="arow2"><div class="ahead"><b class="vname">'+esc(v.name)+'</b></div>'+scoreRow('vscore',v.k,v.score)+'<textarea class="auto jt" rows="2" data-f="vmetas" data-id="'+v.k+'" placeholder="Mis tres metas en esta área" aria-label="Metas de '+esc(v.name)+'">'+esc(v.metas||'')+'</textarea></div>').join('')+'</div></div>';
+  return h;
+}
+
+/* Dejar ir: procrastinación creativa */
+const LGK={postergar:'Postergar',delegar:'Delegar',eliminar:'Eliminar'};
+function viewLetgo(){
+  let h='<h2>Dejar ir</h2><p class="hint">No podés hacer todo. Decidí a propósito qué vas a postergar, delegar o eliminar para tener tiempo de lo importante. Para cada cosa preguntate: si hoy no lo estuviera haciendo, sabiendo lo que sé, ¿lo volvería a empezar?</p>';
+  h+='<form class="add" data-add="letgo" style="margin:0 0 14px"><input type="text" id="addInput" placeholder="Algo que voy a dejar de hacer" aria-label="Algo que voy a dejar" autocomplete="off"><select aria-label="Qué hago con eso"><option value="postergar">Postergar</option><option value="delegar">Delegar</option><option value="eliminar">Eliminar</option></select><button class="btn pri-b" type="submit">Agregar</button></form>';
+  const l=S.letgo.slice().sort((a,b)=>(a.done?1:0)-(b.done?1:0));
+  if(!l.length)return h+'<div class="empty card">Todavía no hay nada. Revisá tu semana y buscá lo que no volverías a empezar.</div>';
+  h+='<div class="card"><ul class="list">'+l.map(x=>'<li class="task'+(x.done?' done':'')+'"><button class="chk" data-act="lgdone" data-id="'+x.id+'" aria-label="Ya lo dejé">'+CHECK+'</button><div class="tbody"><textarea class="txt auto" rows="1" data-f="lg" data-id="'+x.id+'" aria-label="Qué dejo">'+esc(x.text)+'</textarea><div class="meta">'+Object.keys(LGK).map(k=>'<button class="day lgk" data-act="lgkind" data-id="'+x.id+'" data-v="'+k+'" aria-pressed="'+(x.kind===k)+'">'+LGK[k]+'</button>').join('')+'<button class="link" data-act="lgdel" data-id="'+x.id+'">Quitar</button></div></div></li>').join('')+'</ul></div><p class="psub">Tildalo cuando ya lo dejaste.</p>';
+  return h;
 }
 
 /* ---------- acciones ---------- */
@@ -914,13 +1163,41 @@ function addGoal(title,from){
 }
 const A={
   tab(v){S.ui.tab=v;S.ui.more=false;window.scrollTo(0,0)},
+  sound(){S.ui.mute=!S.ui.mute;S.ui.more=false;if(!S.ui.mute)beep('ok')},
+  focus(id){if(S.ui.focus!==id)S.ui.timer=null;S.ui.focus=id;S.ui.more=false},
+  fstart(v){startTimer(v)},
+  fstop(){S.ui.timer=null;keepAwake(false)},
+  fexit(){S.ui.focus=null;S.ui.timer=null;keepAwake(false)},
+  fdone(){const t=T(S.ui.focus);if(t&&!t.done)A.tog(t.id);A.fexit()},
+  bittog(id,s){const t=T(id);const b=t.bits.find(x=>x.id===s);b.done=!b.done;if(b.done)beep('ok')},
+  bitdel(id,s){const t=T(id);t.bits=t.bits.filter(x=>x.id!==s)},
+  goclose(){S.ui.tab='close';window.scrollTo(0,0)},
+  carry(id){reschedule(T(id),tmKey())},
+  carryall(){const ti=iso(today());S.tasks.filter(t=>t.scope==='day'&&t.key===ti&&!t.done&&!t.rec).forEach(t=>reschedule(t,tmKey()))},
+  closeday(){const ti=iso(today());S.journal[ti]=S.journal[ti]||{};S.journal[ti].closed=true;S.ui.tab='plan';beep('close');say('Día cerrado. Buen descanso.');window.scrollTo(0,0)},
+  ascore(id,s,v){const a=S.areas.find(x=>x.id===id);a.score=a.score===+v?0:+v},
+  adel(id){S.areas=S.areas.filter(a=>a.id!==id)},
+  asave(){const ti=iso(today()),snap={d:ti,s:{}};S.areas.forEach(a=>{snap.s[a.id]=a.score});S.areaHist=S.areaHist.filter(x=>x.d!==ti);S.areaHist.push(snap);say('Evaluación guardada.')},
+  vscore(id,s,v){const x=S.vida.find(q=>q.k===id);x.score=x.score===+v?0:+v},
+  habgoal(){if(S.habil&&S.habil.trim()){addGoal(S.habil.trim());S.ui.tab='goals'}else say('Escribí primero la habilidad.')},
+  gokind(id,s,v){const g=goalOf(id);g.obstKind=g.obstKind===v?undefined:v},
+  lgkind(id,s,v){const x=S.letgo.find(q=>q.id===id);x.kind=v},
+  lgdone(id){const x=S.letgo.find(q=>q.id===id);x.done=!x.done;if(x.done)beep('ok')},
+  lgdel(id){S.letgo=S.letgo.filter(q=>q.id!==id)},
   more(){S.ui.more=!S.ui.more},
   zoom(v){S.ui.zoom=v},
   tog(id){const t=T(id);if(!t)return;t.done=!t.done;stamp(t);
     if(t.stepId){const g=goalOf(t.goalId);const s=g&&g.steps.find(x=>x.id===t.stepId);if(s&&!s.rep){s.done=t.done;stamp(s)}}
     if(t.done){cheer();if(!t.impact)S.ui.open=id}},
-  rep(id,s){const st=goalOf(id).steps.find(x=>x.id===s);
-    if(st.rep)delete st.rep;else{st.rep=[today().getDay()];st.done=false;delete st.doneAt;ensureRec(today(),today())}},
+  rep(id,s){const st=goalOf(id).steps.find(x=>x.id===s),ti=iso(today());
+    if(st.rep){
+      delete st.rep;
+      S.tasks=S.tasks.filter(t=>{const kill=t.stepId===s&&t.rec&&!t.done&&t.key>=ti;if(kill&&st.gen)delete st.gen[t.key];return !kill});
+    }else{
+      st.rep=[today().getDay()];st.done=false;delete st.doneAt;
+      S.tasks=S.tasks.filter(t=>!(t.stepId===s&&!t.rec&&!t.done));
+      ensureRec(today(),today());
+    }},
   repday(id,s,v){const st=goalOf(id).steps.find(x=>x.id===s);const n=+v;
     st.rep=st.rep.includes(n)?st.rep.filter(x=>x!==n):st.rep.concat(n);ensureRec(today(),today())},
   resched(id,s,v){const t=T(id);reschedule(t,iso(v==='today'?today():addDays(today(),1)))},
@@ -958,7 +1235,7 @@ document.addEventListener('click',e=>{
   if(act==='copy'){const ta=$('#bk');ta.select();let ok=false;
     try{navigator.clipboard.writeText(ta.value).then(()=>{$('#bkmsg').textContent='Copiado.'},()=>{$('#bkmsg').textContent='No se pudo copiar. Seleccioná el texto y copialo a mano.'});ok=true}catch(x){}
     if(!ok)$('#bkmsg').textContent='Seleccioná el texto y copialo a mano.';return}
-  if(act==='restore'){try{const d=JSON.parse($('#bk').value);if(!d||d.v!==1||!Array.isArray(d.tasks))throw 0;S=d;panel=null;save();render()}catch(x){$('#bkmsg').textContent='El texto no es un respaldo válido.'}return}
+  if(act==='restore'){try{const d=JSON.parse($('#bk').value);if(!d||d.v!==1||!Array.isArray(d.tasks))throw 0;S=prep(d);panel=null;save();render()}catch(x){$('#bkmsg').textContent='El texto no es un respaldo válido.'}return}
   const f=A[act];if(!f)return;
   f(el.dataset.id||el.dataset.v,el.dataset.s,el.dataset.v);
   save();render();
@@ -975,6 +1252,13 @@ document.addEventListener('change',e=>{
   else if(f==='master'){const m=S.master.find(x=>x.id===id);if(m){if(v.trim())m.text=v.trim();else re=true}}
   else if(f==='gtitle'){const g=goalOf(id);if(v.trim())g.title=v.trim()}
   else if(f==='gstart')goalOf(id).start=v;
+  else if(f==='tres')S.tres[+id]=v.trim();
+  else if(f==='aname'){const a=S.areas.find(x=>x.id===id);if(a&&v.trim())a.name=v.trim()}
+  else if(f==='habil')S.habil=v.trim();
+  else if(f==='vmetas'){const x=S.vida.find(q=>q.k===id);if(x)x.metas=v}
+  else if(f==='lg'){const x=S.letgo.find(q=>q.id===id);if(x&&v.trim())x.text=v.trim()}
+  else if(f==='jgood'||f==='jlesson'){const ti=iso(today());S.journal[ti]=S.journal[ti]||{};S.journal[ti][f==='jgood'?'good':'lesson']=v.trim()||undefined}
+  else if(f==='gobst')goalOf(id).obst=v.trim()||undefined;
   else if(f==='gdue')goalOf(id).due=v;
   else if(f==='stext'){const st=goalOf(id).steps.find(x=>x.id===el.dataset.s);if(v.trim()){st.text=v.trim();S.tasks.forEach(t=>{if(t.stepId===st.id)t.text=st.text})}}
   else if(f==='sdue'){const st=goalOf(id).steps.find(x=>x.id===el.dataset.s);st.due=v||undefined;
@@ -995,25 +1279,41 @@ document.addEventListener('submit',e=>{
     S.tasks.push({id:uid(),text:text,scope:'day',key:($('#addDate').value||iso(today())),goalId:gid||undefined});
   }else if(kind==='master')S.master.push({id:uid(),text:text});
   else if(kind==='goal')addGoal(text);
+  else if(kind==='bit'){const t=T(form.dataset.id);if(t)(t.bits=t.bits||[]).push({id:uid(),text:text})}
+  else if(kind==='tomorrow')S.tasks.push({id:uid(),text:text,scope:'day',key:tmKey()});
+  else if(kind==='area')S.areas.push({id:uid(),name:text,score:0});
+  else if(kind==='letgo'){const sel=form.querySelector('select');S.letgo.unshift({id:uid(),text:text,kind:sel?sel.value:'postergar'})}
   else if(kind==='step'){const g=goalOf(form.dataset.id);g.steps.push({id:uid(),text:text})}
   save();
-  if(kind==='step'){const gid=form.dataset.id;render();const f=document.querySelector('form[data-add="step"][data-id="'+gid+'"] input');if(f)f.focus()}
+  if(kind==='step'||kind==='bit'){const gid=form.dataset.id;render();const f=document.querySelector('form[data-add="'+kind+'"][data-id="'+gid+'"] input');if(f)f.focus()}
+  else if(kind==='area'){render()}
   else{focusId='addInput';render()}
 });
 
 /* al abrir: genera las repeticiones de los días desde la última vez que se usó la app (hasta 31 días) */
-(function(){
+function startup(){
   const t=today(),ti=iso(t),last=S.ui.lastRun;
   let from=last&&last<ti?addDays(parse(last),1):t;
   if(t-from>31*864e5)from=addDays(t,-31);
   const ch=ensureRec(from,t);
   if(ch||last!==ti){S.ui.lastRun=ti;save()}
-})();
+  const tm=S.ui.timer;
+  if(tm&&!tm.fired&&Date.now()-tm.endAt>120000){tm.fired=true;save()}
+  if(S.ui.focus&&tm&&!tm.fired)keepAwake(true);
+}
+startup();
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(sizeAll);
+/* si la app quedó abierta de un día para otro, al volver se actualiza sola */
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){cleanup(S);startup();render()}});
 render();
 })();
 </script>
 <script>
-if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}
+if("serviceWorker" in navigator){
+  var had=!!navigator.serviceWorker.controller;
+  navigator.serviceWorker.addEventListener("controllerchange",function(){if(had){var b=document.getElementById("upd");if(b)b.hidden=false}had=true});
+  window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});
+}
+document.getElementById("upd").addEventListener("click",function(){location.reload()});
 </script>
 </body></html>
